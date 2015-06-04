@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/camera_take_picture_index_item"
+        android:showAsAction="never"
+        android:icon="@drawable/ic_media_play"
+        android:title="Take Picture" />
+    <item
+        android:id="@+id/camera_record_index_item"
+        android:showAsAction="never"
+        android:icon="@drawable/ic_media_play"
+        android:title="Record Video" />
+</menu>

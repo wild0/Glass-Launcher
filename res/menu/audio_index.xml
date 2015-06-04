@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/enter"
+        android:showAsAction="never"
+        android:icon="@drawable/ic_media_play"
+        android:title="Enter" />
+    <item
+        android:id="@+id/audio_index_download"
+        android:showAsAction="never"
+        android:icon="@drawable/ic_media_play"
+        android:title="Download" />
+</menu>

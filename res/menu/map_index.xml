@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/map_locate_item"
+        android:showAsAction="never"
+        android:icon="@drawable/ic_media_play"
+        android:title="Locate" />
+    <item
+        android:id="@+id/map_guide_item"
+        android:showAsAction="never"
+        android:icon="@drawable/ic_media_play"
+        android:title="Guide" />
+</menu>

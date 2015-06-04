@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home_index_menu_layout"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:visibility="gone"
+    android:background="#cc000000"
+    >
+
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/data_custom_index_menu_take_imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/glass_mic_icon" />
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/data_custom_index_menu_record_imageView"
+        android:layout_below="@+id/data_custom_index_menu_take_imageView"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/glass_mic_icon" />
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/data_custom_index_menu_music_imageView"
+        android:layout_below="@+id/data_custom_index_menu_record_imageView"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/glass_mic_icon" />
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/data_custom_index_menu_video_imageView"
+        android:layout_below="@+id/data_custom_index_menu_music_imageView"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/glass_mic_icon" />
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/data_custom_index_menu_map_imageView"
+        android:layout_below="@+id/data_custom_index_menu_video_imageView"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/glass_mic_icon" />
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:id="@+id/data_custom_index_menu_cancel_imageView"
+        android:layout_below="@+id/data_custom_index_menu_map_imageView"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/glass_mic_icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Take"
+        android:id="@+id/data_custom_index_menu_take_textView"
+        android:layout_alignTop="@+id/data_custom_index_menu_take_imageView"
+        android:layout_toEndOf="@+id/data_custom_index_menu_take_imageView"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Record"
+        android:id="@+id/data_custom_index_menu_record_textView"
+        android:layout_alignTop="@+id/data_custom_index_menu_record_imageView"
+        android:layout_toEndOf="@+id/data_custom_index_menu_record_imageView"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Music"
+        android:id="@+id/data_custom_index_menu_music_textView"
+        android:layout_alignTop="@+id/data_custom_index_menu_music_imageView"
+        android:layout_toEndOf="@+id/data_custom_index_menu_music_imageView"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Video"
+        android:id="@+id/data_custom_index_menu_video_textView"
+        android:layout_alignTop="@+id/data_custom_index_menu_video_imageView"
+        android:layout_toEndOf="@+id/data_custom_index_menu_video_imageView"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Map"
+        android:id="@+id/data_custom_index_menu_map_textView"
+        android:layout_alignTop="@+id/data_custom_index_menu_map_imageView"
+        android:layout_toEndOf="@+id/data_custom_index_menu_map_imageView"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Cancel"
+        android:id="@+id/data_custom_index_menu_cancel_textView"
+        android:layout_alignTop="@+id/data_custom_index_menu_cancel_imageView"
+        android:layout_toEndOf="@+id/data_custom_index_menu_cancel_imageView"
+        />
+
+
+
+
+
+
+</RelativeLayout>

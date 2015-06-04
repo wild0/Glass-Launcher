@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/profile_call_index_item"
+        android:showAsAction="never"
+        android:icon="@drawable/ic_media_play"
+        android:title="Call" />
+    <item
+        android:id="@+id/profile_contact_index_item"
+        android:showAsAction="never"
+        android:icon="@drawable/ic_media_play"
+        android:title="Contact" />
+    <item
+        android:id="@+id/profile_email_index_item"
+        android:showAsAction="never"
+        android:icon="@drawable/ic_media_play"
+        android:title="Email" />
+</menu>

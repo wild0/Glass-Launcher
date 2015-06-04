@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/setting_wifi_item"
+        android:showAsAction="never"
+        android:icon="@drawable/ic_media_play"
+        android:title="Wifi" />
+    <item
+        android:id="@+id/setting_bluetooth_item"
+        android:showAsAction="never"
+        android:icon="@drawable/ic_media_play"
+        android:title="Bluetooth" />
+</menu>

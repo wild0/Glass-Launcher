@@ -20,4 +20,12 @@
 
 <resources>
     <string name="app_name">Glass Launcher</string>
+
+    <string name="locationdemo_screen_content">Location Demo is Currently Active\nTap to Stop</string>
+    <string name="locationdemo_livecard_content">Location Data:</string>
+
+
+    <!--  For voice input  -->
+    <string name="voicedemo_voice_trigger">start voice demo</string>
+    <string name="voicedemo_voice_prompt">next action</string>
 </resources>

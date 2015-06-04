@@ -29,39 +29,185 @@
     
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="com.google.android.glass.permission.DEVELOPMENT" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_PRIVILEGED"/>
+    <uses-permission
+        android:required="true"
+        android:name="android.permission.INTERNET"/>
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.wifi.direct" android:required="true"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.DeviceDefault">
-        
-        <activity 
-            android:name=".MainActivity"
-            android:label="@string/app_name">
-            <intent-filter>
-            	<action android:name="android.intent.action.MAIN" />
-            	<category android:name="android.intent.category.LAUNCHER" />
-        	</intent-filter>
-       	</activity>
-       	
-        <activity
-            android:name=".MenuActivity"
-            android:label="@string/app_name"
-            android:theme="@style/MenuTheme">
-        </activity>
-        
+
+        <service android:name=".service.LocationService" />
+        <service android:name=".service.PlayAudioService" />
         <service
             android:name=".GlassLauncherService"
             android:icon="@drawable/ic_launcher"
             android:label="@string/app_name">
         </service>
-        
-        <receiver android:name=".BootReceiver">
+
+        <activity
+            android:name=".activity.HomeActivity"
+
+            android:immersive="true"
+            android:label="@string/app_name">
+            <intent-filter>
+            	<action android:name="android.intent.action.MAIN" />
+            	<category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="com.google.android.glass.action.VOICE_TRIGGER" />
+        	</intent-filter>
+            <meta-data
+                android:name="com.google.android.glass.VoiceTrigger"
+                android:resource="@xml/voiceinput_voice" />
+       	</activity>
+
+
+        <activity
+            android:name=".activity.CameraActivity"
+            android:launchMode="singleInstance"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".activity.ApplicationIndexActivity"
+            android:launchMode="singleInstance"
+            android:immersive="true"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".activity.ApplicationListActivity"
+            android:immersive="true"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".activity.ProfileIndexActivity"
+            android:launchMode="singleInstance"
+            android:immersive="true"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".activity.MapActivity"
+            android:launchMode="singleInstance"
+            android:immersive="true"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".activity.MediaIndexActivity"
+            android:launchMode="standard"
+            android:immersive="true"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".activity.AudioIndexActivity"
+            android:immersive="true"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".activity.AudioListActivity"
+            android:immersive="true"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".activity.VideoIndexActivity"
+            android:immersive="true"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".activity.VideoListActivity"
+            android:immersive="true"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+
+            android:name=".activity.GalleryListActivity"
+            android:immersive="true"
+            android:label="Glass Launcher">
+
+
+        </activity>
+        <activity
+            android:name=".activity.SettingWifiActivity"
+            android:immersive="true"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".activity.SettingBluetoothActivity"
+            android:immersive="true"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".activity.SettingActivity"
+            android:immersive="true"
+            android:launchMode="singleInstance"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".activity.CaptureActivity"
+            android:immersive="true">
+
+        </activity>
+        <activity
+            android:name=".activity.VideoPlayerActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="video/*" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/app_name"
+            android:theme="@style/MenuTheme">
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+
+        </activity>
+
+
+
+        <receiver android:name=".receiver.BootReceiver">
 		    <intent-filter>
 		        <action android:name="android.intent.action.BOOT_COMPLETED" />
 		    </intent-filter>
-		</receiver>  
-        
+		</receiver>
+        <receiver android:name=".receiver.BatteryReceiver">
+            <intent-filter  android:priority="900">
+                <action android:name="android.intent.action.BATTERY_LOW" />
+                <action android:name="android.intent.action.ACTION_BATTERY_CHANGED" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

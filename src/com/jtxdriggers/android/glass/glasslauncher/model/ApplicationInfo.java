@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.jtxdriggers.android.glass.glasslauncher;
+package com.jtxdriggers.android.glass.glasslauncher.model;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -24,19 +24,19 @@ import android.graphics.drawable.Drawable;
  * Represents a launchable application. An application is made of a name (or title), an intent
  * and an icon.
  */
-class ApplicationInfo {
+public class ApplicationInfo {
 
-    CharSequence title;
+    public CharSequence title;
 
     /**
      * The intent used to start the application.
      */
-    Intent intent;
+    public Intent intent;
 
     /**
      * The application icon.
      */
-    Drawable icon;
+    public Drawable icon;
 
     /**
      * When set to true, indicates that the icon has been resized.
@@ -49,7 +49,7 @@ class ApplicationInfo {
      * @param className the class name of the component representing the intent
      * @param launchFlags the launch flags
      */
-    final void setActivity(ComponentName className, int launchFlags) {
+    public final void setActivity(ComponentName className, int launchFlags) {
         intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
         intent.setComponent(className);

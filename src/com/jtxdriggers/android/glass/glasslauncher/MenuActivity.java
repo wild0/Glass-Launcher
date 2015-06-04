@@ -27,6 +27,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.jtxdriggers.android.glass.glasslauncher.model.ApplicationInfo;
+
 public class MenuActivity extends Activity {
 	
 	public static final String UPDATE_RECEIVER = "com.justindriggers.android.glass.glasslauncher.UPDATE_RECEIVER";

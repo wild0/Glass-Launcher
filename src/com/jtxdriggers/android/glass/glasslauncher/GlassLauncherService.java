@@ -23,6 +23,9 @@ import java.util.List;
 
 import com.google.android.glass.timeline.LiveCard;
 import com.google.android.glass.timeline.LiveCard.PublishMode;
+import com.jtxdriggers.android.glass.glasslauncher.activity.HomeActivity;
+import com.jtxdriggers.android.glass.glasslauncher.manager.VoiceControlManager;
+import com.jtxdriggers.android.glass.glasslauncher.model.ApplicationInfo;
 
 import android.app.PendingIntent;
 import android.app.Service;
@@ -45,6 +48,7 @@ public class GlassLauncherService extends Service {
     private static ArrayList<ApplicationInfo> mApplications;
     
 	private LiveCard mLiveCard;
+    static GlassLauncherService instance = null;
 
 	@Override
 	public IBinder onBind(Intent intent) {
@@ -60,12 +64,13 @@ public class GlassLauncherService extends Service {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		
+		instance = this;
 		IntentFilter filter = new IntentFilter(Intent.ACTION_PACKAGE_ADDED);
         filter.addAction(Intent.ACTION_PACKAGE_REMOVED);
         filter.addAction(Intent.ACTION_PACKAGE_CHANGED);
         filter.addDataScheme("package");
         registerReceiver(mApplicationsReceiver, filter);
+        //VoiceControlManager.init(instance.getApplicationContext());
 	}
 	
 	@Override
@@ -129,6 +134,11 @@ public class GlassLauncherService extends Service {
         
         sendBroadcast(new Intent(MenuActivity.UPDATE_RECEIVER));
     }
+
+
+    public static GlassLauncherService getInstance(){
+        return instance;
+    }
     
     public static ArrayList<ApplicationInfo> getApplications() {
     	return mApplications;
@@ -151,7 +161,8 @@ public class GlassLauncherService extends Service {
 	
 	        mLiveCard.setViews(new RemoteViews(context.getPackageName(),
 	                R.layout.glasslauncher_layout));
-	        Intent intent = new Intent(context, MenuActivity.class);
+	        //Intent intent = new Intent(context, MenuActivity.class);
+            Intent intent = new Intent(context, HomeActivity.class);
 	        mLiveCard.setAction(PendingIntent.getActivity(context, 0,
 	                intent, 0));
 	        mLiveCard.publish(PublishMode.SILENT);
