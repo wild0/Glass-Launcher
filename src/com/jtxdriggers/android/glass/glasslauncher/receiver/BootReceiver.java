@@ -29,5 +29,4 @@ public class BootReceiver extends BroadcastReceiver {
 		Intent service = new Intent(context, GlassLauncherService.class);
         context.startService(service);
 	}
-
 }
