@@ -54,16 +54,16 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.DeviceDefault">
 
-        <service android:name=".service.LocationService" />
-        <service android:name=".service.PlayAudioService" />
+        <service android:name="com.wild0.android.glasslauncher.service.LocationService" />
+        <service android:name="com.wild0.android.glasslauncher.service.PlayAudioService" />
         <service
-            android:name=".GlassLauncherService"
+            android:name="com.wild0.android.glasslauncher.GlassLauncherService"
             android:icon="@drawable/ic_launcher"
             android:label="@string/app_name">
         </service>
 
         <activity
-            android:name=".activity.HomeActivity"
+            android:name="com.wild0.android.glasslauncher.activity.HomeActivity"
 
             android:immersive="true"
             android:label="@string/app_name">
@@ -79,102 +79,102 @@
 
 
         <activity
-            android:name=".activity.CameraActivity"
+            android:name="com.wild0.android.glasslauncher.activity.CameraActivity"
             android:launchMode="singleInstance"
             android:label="@string/app_name">
 
         </activity>
         <activity
-            android:name=".activity.ApplicationIndexActivity"
-            android:launchMode="singleInstance"
-            android:immersive="true"
-            android:label="@string/app_name">
-
-        </activity>
-        <activity
-            android:name=".activity.ApplicationListActivity"
-            android:immersive="true"
-            android:label="@string/app_name">
-
-        </activity>
-        <activity
-            android:name=".activity.ProfileIndexActivity"
+            android:name="com.wild0.android.glasslauncher.activity.ApplicationIndexActivity"
             android:launchMode="singleInstance"
             android:immersive="true"
             android:label="@string/app_name">
 
         </activity>
         <activity
-            android:name=".activity.MapActivity"
+            android:name="com.wild0.android.glasslauncher.activity.ApplicationListActivity"
+            android:immersive="true"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name="com.wild0.android.glasslauncher.activity.ProfileIndexActivity"
             android:launchMode="singleInstance"
             android:immersive="true"
             android:label="@string/app_name">
 
         </activity>
         <activity
-            android:name=".activity.MediaIndexActivity"
+            android:name="com.wild0.android.glasslauncher.activity.MapActivity"
+            android:launchMode="singleInstance"
+            android:immersive="true"
+            android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name="com.wild0.android.glasslauncher.activity.MediaIndexActivity"
             android:launchMode="standard"
             android:immersive="true"
             android:label="@string/app_name">
 
         </activity>
         <activity
-            android:name=".activity.AudioIndexActivity"
+            android:name="com.wild0.android.glasslauncher.activity.AudioIndexActivity"
             android:immersive="true"
             android:label="@string/app_name">
 
         </activity>
         <activity
-            android:name=".activity.AudioListActivity"
+            android:name="com.wild0.android.glasslauncher.activity.AudioListActivity"
             android:immersive="true"
             android:label="@string/app_name">
 
         </activity>
         <activity
-            android:name=".activity.VideoIndexActivity"
+            android:name="com.wild0.android.glasslauncher.activity.VideoIndexActivity"
             android:immersive="true"
             android:label="@string/app_name">
 
         </activity>
         <activity
-            android:name=".activity.VideoListActivity"
+            android:name="com.wild0.android.glasslauncher.activity.VideoListActivity"
             android:immersive="true"
             android:label="@string/app_name">
 
         </activity>
         <activity
 
-            android:name=".activity.GalleryListActivity"
+            android:name="com.wild0.android.glasslauncher.activity.GalleryListActivity"
             android:immersive="true"
             android:label="Glass Launcher">
 
 
         </activity>
         <activity
-            android:name=".activity.SettingWifiActivity"
+            android:name="com.wild0.android.glasslauncher.activity.SettingWifiActivity"
             android:immersive="true"
             android:label="@string/app_name">
 
         </activity>
         <activity
-            android:name=".activity.SettingBluetoothActivity"
+            android:name="com.wild0.android.glasslauncher.activity.SettingBluetoothActivity"
             android:immersive="true"
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".activity.SettingActivity"
+            android:name="com.wild0.android.glasslauncher.activity.SettingActivity"
             android:immersive="true"
             android:launchMode="singleInstance"
             android:label="@string/app_name">
 
         </activity>
         <activity
-            android:name=".activity.CaptureActivity"
+            android:name="com.wild0.android.glasslauncher.activity.CaptureActivity"
             android:immersive="true">
 
         </activity>
         <activity
-            android:name=".activity.VideoPlayerActivity"
+            android:name="com.wild0.android.glasslauncher.activity.VideoPlayerActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -184,24 +184,24 @@
         </activity>
 
         <activity
-            android:name=".MenuActivity"
+            android:name="com.wild0.android.glasslauncher.MenuActivity"
             android:label="@string/app_name"
             android:theme="@style/MenuTheme">
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.wild0.android.glasslauncher.MainActivity"
             android:label="@string/app_name">
 
         </activity>
 
 
 
-        <receiver android:name=".receiver.BootReceiver">
+        <receiver android:name="com.wild0.android.glasslauncher.receiver.BootReceiver">
 		    <intent-filter>
 		        <action android:name="android.intent.action.BOOT_COMPLETED" />
 		    </intent-filter>
 		</receiver>
-        <receiver android:name=".receiver.BatteryReceiver">
+        <receiver android:name="com.wild0.android.glasslauncher.receiver.BatteryReceiver">
             <intent-filter  android:priority="900">
                 <action android:name="android.intent.action.BATTERY_LOW" />
                 <action android:name="android.intent.action.ACTION_BATTERY_CHANGED" />
